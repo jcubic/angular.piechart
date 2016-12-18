@@ -1,0 +1,7 @@
+*~
+.[0-9/]*
+\#*\#
+.\#*
+bower_components
+node_modules
+www

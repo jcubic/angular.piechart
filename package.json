@@ -1,0 +1,27 @@
+{
+  "name": "angular.piechart",
+  "version": "0.1.0",
+  "description": "Angular piechart is a angular component that create svg based piecharts.",
+  "main": "js/angular.piechart.min.js",
+  "keywords": [
+    "svg",
+    "graph",
+    "drawing",
+    "chart",
+    "pie"
+  ],
+  "author": "Jakub Jankiewicz <jcubic@onet.pl> (http://jcubic.pl)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcubic/angular.piechart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jcubic/angular.piechart/issues"
+  },
+  "homepage": "http://jcubic.pl/angular.piechart/",
+  "dependencies": {
+    "jquery": "^1.5"
+  },
+  "devDependencies": {}
+}
