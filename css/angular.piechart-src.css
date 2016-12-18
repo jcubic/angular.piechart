@@ -8,7 +8,6 @@
  * Date: {{DATE}}
  */
 piechart svg {
-    width: 140px; height: 140px;
     transform: rotate(-90deg);
     border-radius: 50%;
 }
