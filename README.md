@@ -42,19 +42,19 @@ function controller() {
 		data: [
 			{
 				color: 'red',
-				value: 10
+				value: 10 // 10%
 			},
 			{
 				color: 'green',
-				value: 20
+				value: 20 // 20%
 			},
 			{
 				color: 'blue',
-				value: 30
+				value: 30 // 30%
 			},
 			{
 				color: 'yellow',
-				value: 40
+				value: 40 // 40%
 			}
 		]
 	};
