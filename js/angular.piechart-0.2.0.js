@@ -1,11 +1,11 @@
 /**@license
  *
- * Angular piechart is a angular component that create svg based piecharts - version 0.1.1
+ * Angular piechart is a angular component that create svg based piecharts - version 0.2.0
  *
  * Copyright (c) 2016 Jakub Jankiewicz <http://jcubic.pl>
  * Released under the MIT license
  *
- * Date: Sun, 18 Dec 2016 15:23:25 +0000
+ * Date: Sun, 18 Dec 2016 15:54:44 +0000
  */
 (function (global, factory) {
 	'use strict';
@@ -37,7 +37,7 @@
 		controller: controller,
 		controllerAs: 'vm'
 	});
-	function controller() {
+	function controller($scope) {
 		var maxValue = 100;
 		function sumValues(items, offset) {
 			return Math.floor(items.reduce(function(count, part) {
@@ -49,17 +49,17 @@
 			}, 0));
 		}
 		var self = this;
-		self.$onInit = function() {
-			self.ngModel.$render = function() {
-				if (self.ngModel.$modelValue) {
-					self.parts = self.ngModel.$modelValue.data.slice();
-					self.color = self.ngModel.$modelValue.color;
-					for (var i=0; i<self.parts.length; ++i) {
-						self.parts[i].offset = Math.round((sumValues(self.parts.slice(0, i)) * 360) / 100);
-					}
+		function update() {
+			if (self.ngModel.$modelValue) {
+				self.parts = self.ngModel.$modelValue.data.slice();
+				self.color = self.ngModel.$modelValue.color;
+				for (var i=0; i<self.parts.length; ++i) {
+					self.parts[i].offset = Math.round((sumValues(self.parts.slice(0, i)) * 360) / 100);
 				}
-			};
-		};
+			}
+		}
+		$scope.$watch(function() { return self.ngModel.$modelValue; }, update, true);
 	}
+	controller.$inject = ['$scope'];
 	return module;
 });

@@ -9,7 +9,7 @@ piechart circle#center {
     stroke: white;
     stroke-width: 2;
 }
-piechart {
+piechart svg {
     width: 140px;
 	height: 140px;
 }
@@ -55,6 +55,15 @@ piechart {
                     }
                 ]
             };
+			var self = this;
+			  this.change = function() {
+				[4, 30, 10, 10].forEach(function(n, i) {
+				  self.piechartData1.data[i].value = n;
+				});
+				[5, 10, 60].forEach(function(n, i) {
+				  self.piechartData2.data[i].value = n;
+				});
+			  };
 		});
 	</script>
 </head>
@@ -66,5 +75,6 @@ piechart {
 	<piechart ng-model="vm.piechartData2">
 		<circle r="12" cx="16" cy="16" style="fill: white"/>
 	</piechart>
+	<button ng-click="vm.change()">change</button>
 </body>
 </html>

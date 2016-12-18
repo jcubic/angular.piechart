@@ -37,7 +37,7 @@
 		controller: controller,
 		controllerAs: 'vm'
 	});
-	function controller() {
+	function controller($scope) {
 		var maxValue = 100;
 		function sumValues(items, offset) {
 			return Math.floor(items.reduce(function(count, part) {
@@ -49,17 +49,17 @@
 			}, 0));
 		}
 		var self = this;
-		self.$onInit = function() {
-			self.ngModel.$render = function() {
-				if (self.ngModel.$modelValue) {
-					self.parts = self.ngModel.$modelValue.data.slice();
-					self.color = self.ngModel.$modelValue.color;
-					for (var i=0; i<self.parts.length; ++i) {
-						self.parts[i].offset = Math.round((sumValues(self.parts.slice(0, i)) * 360) / 100);
-					}
+		function update() {
+			if (self.ngModel.$modelValue) {
+				self.parts = self.ngModel.$modelValue.data.slice();
+				self.color = self.ngModel.$modelValue.color;
+				for (var i=0; i<self.parts.length; ++i) {
+					self.parts[i].offset = Math.round((sumValues(self.parts.slice(0, i)) * 360) / 100);
 				}
-			};
-		};
+			}
+		}
+		$scope.$watch(function() { return self.ngModel.$modelValue; }, update, true);
 	}
+	controller.$inject = ['$scope'];
 	return module;
 });
