@@ -2,7 +2,7 @@
 
 Angular piechart is a angular component that create svg based piecharts.
 
-[Demo](http://codepen.io/jcubic/pen/aBKYRR)
+[Demo](http://codepen.io/jcubic/pen/xRMGZz)
 
 #installation
 
