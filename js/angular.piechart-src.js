@@ -21,7 +21,7 @@
     var module = angular.module('piechart', []);
     var template = '<svg viewBox="0 0 32 32" ng-style="{\'background-color\': vm.color}">'+
         '<circle ng-if="part.value" id="circle-{{$index}}" r="16" cx="16" cy="16" '+
-        '        ng-repeat="part in vm.parts" ng-attr-transform="rotate({{part.offset}} 50% 50%)" '+
+        '        ng-repeat="part in vm.parts" ng-attr-transform="rotate({{part.offset}})" '+
         '        stroke="{{part.color}}" ng-attr-stroke-dasharray="{{part.value}} 100" />'+
         '<g ng-transclude></g>'+
         '</svg>';
