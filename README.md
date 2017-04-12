@@ -6,7 +6,7 @@ Based on [Lea Verou](http://lea.verou.me/) [Designing Flexible, Maintainable Pie
 
 [Demo](http://codepen.io/jcubic/pen/xRMGZz)
 
-#installation
+# installation
 
 to install you can grab the files from the repo or install from
 
@@ -37,27 +37,27 @@ and you can use this code to initialize the plugin:
 
 ```javascript
 function controller() {
-	this.data = {
-		color: '#1F187A',
-		data: [
-			{
-				color: 'red',
-				value: 10 // 10%
-			},
-			{
-				color: 'green',
-				value: 20 // 20%
-			},
-			{
-				color: 'blue',
-				value: 30 // 30%
-			},
-			{
-				color: 'yellow',
-				value: 40 // 40%
-			}
-		]
-	};
+    this.data = {
+        color: '#1F187A',
+        data: [
+            {
+                color: 'red',
+                value: 10 // 10%
+            },
+            {
+                color: 'green',
+                value: 20 // 20%
+            },
+            {
+                color: 'blue',
+                value: 30 // 30%
+            },
+            {
+                color: 'yellow',
+                value: 40 // 40%
+            }
+        ]
+    };
 }
 ```
 
@@ -66,7 +66,7 @@ You can also inject stuff into piechart component it will be added after piechar
 For instance to add donat chart you can add another circle:
 
 <piechart ng-model="vm.data">
-	<circle r="12" cx="16" cy="16" style="fill: white"/>
+    <circle r="12" cx="16" cy="16" style="fill: white"/>
 </piechart>
 
 # License
