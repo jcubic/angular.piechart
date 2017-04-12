@@ -6,6 +6,6 @@ Makefile*
 README.in
 examples
 bin
-css/jquery.filebrowser-*.css
-js/jquery.filebrowser-*.js
+css/angular.piechartr-*.css
+js/angular.piechart-*.js
 version
