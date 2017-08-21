@@ -13,7 +13,7 @@ to install you can grab the files from the repo or install from
 ## bower
 
 ```
-browser install angular.piechart --save
+bower install angular.piechart --save
 ```
 
 ## npm
