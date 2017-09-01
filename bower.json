@@ -1,6 +1,6 @@
 {
     "name": "jquery.filebrowser",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "main": [
         "js/angular.piechart.js",
         "css/angular.piechart.css"

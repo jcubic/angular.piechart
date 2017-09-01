@@ -1,12 +1,13 @@
 /**@license
  *
- * Angular piechart is a angular component that create svg based piecharts - version 0.2.3
+ * Angular piechart is a angular component that create svg based piecharts - version 0.2.4
  *
  * Copyright (c) 2016 Jakub Jankiewicz <http://jcubic.pl/me>
  * Released under the MIT license
  *
- * Date: Wed, 12 Apr 2017 17:00:07 +0000
+ * Date: Fri, 01 Sep 2017 20:10:55 +0000
  */
+/* global exports module define require */
 (function (global, factory) {
     'use strict';
     if (typeof exports === 'object' && typeof module !== 'undefined') {
@@ -19,12 +20,22 @@
 })(this, function(angular) {
     'use strict';
     var module = angular.module('piechart', []);
-    var template = '<svg viewBox="0 0 32 32" ng-style="{\'background-color\': vm.color}">'+
-        '<circle ng-if="part.value" id="circle-{{$index}}" r="16" cx="16" cy="16" '+
-        '        ng-repeat="part in vm.parts" ng-attr-transform="rotate({{part.offset}})" '+
-        '        stroke="{{part.color}}" ng-attr-stroke-dasharray="{{part.value}} 100" />'+
-        '<g ng-transclude></g>'+
-        '</svg>';
+    var template;
+    if (/Edge\/\d.|MSIE/i.test(navigator.userAgent)) {
+        template = '<svg viewBox="0 0 32 32" ng-style="{\'background-color\': vm.color}">'+
+            '<circle ng-if="part.value" id="circle-{{$index}}" r="16" cx="16" cy="16" '+
+            '        ng-repeat="part in vm.parts" ng-attr-transform="rotate({{part.offset}} 16 16)" '+
+            '        stroke="{{part.color}}" ng-attr-stroke-dasharray="{{part.value}} 100" />'+
+            '<g ng-transclude></g>'+
+            '</svg>';
+    } else {
+        template = '<svg viewBox="0 0 32 32" ng-style="{\'background-color\': vm.color}">'+
+            '<circle ng-if="part.value" id="circle-{{$index}}" r="16" cx="16" cy="16" '+
+            '        ng-repeat="part in vm.parts" ng-attr-transform="rotate({{part.offset}})" '+
+            '        stroke="{{part.color}}" ng-attr-stroke-dasharray="{{part.value}} 100" />'+
+            '<g ng-transclude></g>'+
+            '</svg>';
+    }
     module.component('piechart', {
         template: template,
         require: {

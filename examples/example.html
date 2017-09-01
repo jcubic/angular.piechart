@@ -1,80 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
-	<script src="../js/angular.piechart-src.js"></script>
-	<link rel="stylesheet" href="../css/angular.piechart-src.css"/>
-	<style>
-piechart circle#center {
-    stroke: white;
-    stroke-width: 2;
-}
-piechart svg {
-    width: 140px;
-	height: 140px;
-}
-	</style>
-	<script>
-		var app = angular.module('app', ['piechart']);
-		app.controller('main', function() {
-			this.piechartData1 = {
-                color: '#1F187A',
-                data: [
-                    {
-                        color: 'red',
-                        value: 10
-                    },
-                    {
-                        color: 'green',
-                        value: 20
-                    },
-                    {
-                        color: 'blue',
-                        value: 30
-                    },
-                    {
-                        color: 'yellow',
-                        value: 40
-                    }
-                ]
-            };
-			this.piechartData2 = {
-                color: '#157C5B',
-                data: [
-                    {
-                        color: '#24A179',
-                        value: 10
-                    },
-                    {
-                        color: '#8BCD00',
-                        value: 20
-                    },
-                    {
-                        color: '#FFC400',
-                        value: 30
-                    }
-                ]
-            };
-			var self = this;
-			  this.change = function() {
-				[4, 30, 10, 10].forEach(function(n, i) {
-				  self.piechartData1.data[i].value = n;
-				});
-				[5, 10, 60].forEach(function(n, i) {
-				  self.piechartData2.data[i].value = n;
-				});
-			  };
-		});
-	</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script src="../js/angular.piechart-src.js"></script>
+    <link rel="stylesheet" href="../css/angular.piechart-src.css"/>
+    <style>
+     piechart circle#center {
+         stroke: white;
+         stroke-width: 2;
+     }
+     piechart svg {
+         width: 140px;
+         height: 140px;
+     }
+    </style>
+    <script>
+     var app = angular.module('app', ['piechart']);
+     app.controller('main', function() {
+         this.piechartData1 = {
+             color: '#1F187A',
+             data: [
+                 {
+                     color: 'red',
+                     value: 10
+                 },
+                 {
+                     color: 'green',
+                     value: 20
+                 },
+                 {
+                     color: 'blue',
+                     value: 30
+                 },
+                 {
+                     color: 'yellow',
+                     value: 40
+                 }
+             ]
+         };
+         this.piechartData2 = {
+             color: '#157C5B',
+             data: [
+                 {
+                     color: '#24A179',
+                     value: 20
+                 },
+                 {
+                     color: '#8BCD00',
+                     value: 40
+                 },
+                 {
+                     color: '#FFC400',
+                     value: 10
+                 }
+             ]
+         };
+         var toggle = true;
+         this.change = function() {
+             var self = this;
+             if (toggle) {
+                 [4, 30, 10, 10].forEach(function(n, i) {
+                     self.piechartData1.data[i].value = n;
+                 });
+                 [5, 10, 60].forEach(function(n, i) {
+                     self.piechartData2.data[i].value = n;
+                 });
+             } else {
+                 [10, 20, 30, 40].forEach(function(n, i) {
+                     self.piechartData1.data[i].value = n;
+                 });
+                 [20, 40, 10].forEach(function(n, i) {
+                     self.piechartData2.data[i].value = n;
+                 });
+
+             }
+             toggle = !toggle;
+         };
+     });
+    </script>
 </head>
 <body ng-app="app" ng-controller="main as vm">
-	<piechart ng-model="vm.piechartData1">
-		<circle id="center" r="8" cx="16" cy="16" style="fill: #1F187A" />
-	</piechart>
-	<piechart ng-model="vm.piechartData2"></piechart>
-	<piechart ng-model="vm.piechartData2">
-		<circle r="12" cx="16" cy="16" style="fill: white"/>
-	</piechart>
-	<button ng-click="vm.change()">change</button>
+    <piechart ng-model="vm.piechartData1">
+        <circle id="center" r="8" cx="16" cy="16" style="fill: #1F187A" />
+    </piechart>
+    <piechart ng-model="vm.piechartData2"></piechart>
+    <piechart ng-model="vm.piechartData2">
+        <circle r="12" cx="16" cy="16" style="fill: white"/>
+    </piechart>
+    <button ng-click="vm.change()">change</button>
 </body>
 </html>
