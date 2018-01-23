@@ -1,4 +1,4 @@
-# Angular Piechart 0.2.4
+# Angular Piechart 0.2.5
 
 Angular piechart is a angular component that create svg based piecharts.
 
@@ -13,7 +13,7 @@ to install you can grab the files from the repo or install from
 ## bower
 
 ```
-bower install angular.piechart --save
+browser install angular.piechart --save
 ```
 
 ## npm

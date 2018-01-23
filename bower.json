@@ -1,6 +1,6 @@
 {
     "name": "jquery.filebrowser",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "main": [
         "js/angular.piechart.js",
         "css/angular.piechart.css"
@@ -13,16 +13,15 @@
         "bower.in",
         "Makefile",
         "Makefile.in",
-		".gitignore",
-		".npmignore",
-		"package.in",
-		"package.json",
-		"bin",
-		"version"
-		
+        ".gitignore",
+        ".npmignore",
+        "package.in",
+        "package.json",
+        "bin",
+        "version"
     ],
     "dependencies": {
-        "angular": "~1.5"
+        "angular": "~3"
     },
     "devDependencies": {}
 }
