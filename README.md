@@ -1,4 +1,4 @@
-# Angular Piechart 0.2.7
+# Angular Piechart 0.2.8
 
 Angular piechart is a angular component that create svg based piecharts.
 

@@ -1,11 +1,11 @@
 /**@license
  *
- * Angular piechart is a angular component that create svg based piecharts - version 0.2.7
+ * Angular piechart is a angular component that create svg based piecharts - version 0.2.8
  *
  * Copyright (c) 2016 Jakub Jankiewicz <http://jcubic.pl/me>
  * Released under the MIT license
  *
- * Date: Sun, 29 Jul 2018 16:22:47 +0000
+ * Date: Sun, 29 Jul 2018 16:32:10 +0000
  */
 /* global exports module define require */
 (function (global, factory) {
@@ -48,7 +48,7 @@
     if (/Edge\/\d.|MSIE/i.test(navigator.userAgent)) {
         template = '<svg viewBox="0 0 32 32" ng-style="{\'background-color\': vm.color}">'+
             '<path id="circle-{{$index}}" ng-attr-d="{{vm.arc(16, 16, 16, 0, part.angle)}}"'+
-            '        ng-repeat="part in vm.parts" ng-attr-transform="rotate({{part.offset}})"'+
+            '        ng-repeat="part in vm.parts" ng-attr-transform="rotate({{part.offset}} 16 16)"'+
             '        ng-attr-foo="{{part.start + \' \' + part.end}}"' +
             '        fill="{{part.color}}"/>' +
             '<g ng-transclude></g>'+

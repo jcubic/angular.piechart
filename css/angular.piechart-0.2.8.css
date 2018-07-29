@@ -1,11 +1,11 @@
 /**@license
  *
- * Angular piechart is a angular component that create svg based piecharts - version 0.2.7
+ * Angular piechart is a angular component that create svg based piecharts - version 0.2.8
  *
  * Copyright (c) 2016 Jakub Jankiewicz <http://jcubic.pl/me>
  * Released under the MIT license
  *
- * Date: Sun, 29 Jul 2018 16:22:47 +0000
+ * Date: Sun, 29 Jul 2018 16:32:10 +0000
  */
 piechart svg {
     transform: rotate(-90deg);
@@ -14,9 +14,7 @@ piechart svg {
 piechart circle {
     fill: transparent;
     stroke-width: 32;
+    transform-origin: 50% 50%;
     -webkit-transition: all 0.3s linear;
             transition: all 0.3s linear;
-}
-piechart circle, piechart path {
-    transform-origin: 50% 50%;
 }

@@ -1,6 +1,6 @@
 {
   "name": "angular.piechart",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Angular piechart is a angular component that create svg based piecharts.",
   "main": "js/angular.piechart.min.js",
   "keywords": [
