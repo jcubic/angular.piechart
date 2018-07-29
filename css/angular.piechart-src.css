@@ -14,7 +14,9 @@ piechart svg {
 piechart circle {
     fill: transparent;
     stroke-width: 32;
-    transform-origin: 50% 50%;
     -webkit-transition: all 0.3s linear;
             transition: all 0.3s linear;
+}
+piechart circle, piechart path {
+    transform-origin: 50% 50%;
 }
