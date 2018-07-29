@@ -45,7 +45,7 @@
         return d;
     }
 
-    if (true || /Edge\/\d.|MSIE/i.test(navigator.userAgent)) {
+    if (/Edge\/\d.|MSIE/i.test(navigator.userAgent)) {
         template = '<svg viewBox="0 0 32 32" ng-style="{\'background-color\': vm.color}">'+
             '<path id="circle-{{$index}}" ng-attr-d="{{vm.arc(16, 16, 16, 0, part.angle)}}"'+
             '        ng-repeat="part in vm.parts" ng-attr-transform="rotate({{part.offset}})"'+
