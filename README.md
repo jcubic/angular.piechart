@@ -73,4 +73,4 @@ For instance to add donat chart you can add another circle:
 
 Licensed under [MIT](http://opensource.org/licenses/MIT) license
 
-Copyright (c) 2016 [Jakub Jankiewicz](http://jcubic.pl/jakub-jankiewicz)
+Copyright (c) 2016 [Jakub T. Jankiewicz](https://jcubic.pl/jakub-jankiewicz)
